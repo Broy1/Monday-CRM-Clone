@@ -47,14 +47,30 @@ const Dashboard = () =>{
         ...new Set(tickets?.map(({category}) => category))
     ]
 
+
     return (
         <div className="dashboard">
-            <h1>My projects</h1>
-            <div className="ticket-container">
-                <TicketCard/>
-            </div>
+          <h1>My Projects</h1>
+          <div className="ticket-container">
+            {tickets &&
+              uniqueCategories?.map((uniqueCategory, categoryIndex) => (
+                <div key={categoryIndex}>
+                  <h3>{uniqueCategory}</h3>
+
+                  {tickets.filter((ticket) => ticket.category === uniqueCategory)
+                    .map((filteredTicket, _index) => (
+                      <TicketCard
+                        id={_index}
+                        color={filteredTicket.color}
+                        ticket={filteredTicket}
+                      />
+                    ))}
+
+                </div>
+              ))}
+          </div>
         </div>
-    )
+      )
 }
 
 export default Dashboard
