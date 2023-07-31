@@ -47,7 +47,6 @@ const Dashboard = () =>{
         ...new Set(tickets?.map(({category}) => category))
     ]
 
-
     return (
         <div className="dashboard">
           <h1>My Projects</h1>
