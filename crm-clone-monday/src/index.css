@@ -134,3 +134,17 @@ align-items: center;
   background-color: rgb(8, 4, 252);
   height: 100%;
 }
+
+.ticket-card .delete-block {
+  background-color: rgb(211,211,211);
+  width: 50px;
+  margin: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ticket-card .delete-cross {
+  color: rgb(255, 0, 0)
+}
+
