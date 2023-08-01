@@ -6,7 +6,7 @@ const Dashboard = () =>{
         {
             category: 'q1 2022',
             color: 'red',
-            title: 'nft safety video',
+            title: 'c shark component implementation',
             owner: 'roland',
             avatar: 'https://cdn-icons-png.flaticon.com/512/1090/1090806.png',
             status: 'done',
@@ -18,7 +18,7 @@ const Dashboard = () =>{
         {
             category: 'q1 2022',
             color: 'red',
-            title: 'asdf safety video',
+            title: 'database deployment',
             owner: 'roland',
             avatar: 'https://cdn-icons-png.flaticon.com/512/1090/1090806.png',
             status: 'in-progress',
@@ -30,7 +30,7 @@ const Dashboard = () =>{
         {
             category: 'q2 2022',
             color: 'blue',
-            title: 'build a bot',
+            title: 'ddos attack vulnerability check',
             owner: 'roland',
             avatar: 'https://cdn-icons-png.flaticon.com/512/1090/1090806.png',
             status: 'done',
@@ -39,6 +39,15 @@ const Dashboard = () =>{
             description: 'make a video',
             timestamp: '2022-02-11T07:36:17'
         }
+    ]
+
+    /* each category has a unique color, more can be added */
+    const colors = [
+      'rgb(255,179,186)',
+      'rgb(255,223,186)',
+      'rgb(255,255,186)',
+      'rgb(186,255,201)',
+      'rgb(186,255,255)'
     ]
 
     /* getting each unique category from objects */
@@ -60,7 +69,7 @@ const Dashboard = () =>{
                     .map((filteredTicket, _index) => (
                       <TicketCard
                         id={_index}
-                        color={filteredTicket.color}
+                        color={colors[categoryIndex] || colors[0]}
                         ticket={filteredTicket}
                       />
                     ))}
